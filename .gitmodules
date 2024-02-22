@@ -1,0 +1,6 @@
+[submodule "onlineAuction-backend"]
+	path = onlineAuction-backend
+	url = https://github.com/sameerganduri/onlineAuction-backend.git
+[submodule "OnlineAuction-frontEnd"]
+	path = OnlineAuction-frontEnd
+	url = https://github.com/sameerganduri/OnlineAuction-frontEnd.git
