@@ -1,0 +1,155 @@
+<div class="row mt-5">
+    <div class="col-sm"></div>
+    <div class="col-sm-4 me-5 mt-5">
+      <div class="card shadow bg-body rounded">
+        <div class="card-header h4 text-center">Login</div>
+        <div class="card-body">
+          <form
+            #loginForm="ngForm"
+
+            (ngSubmit)="onLogin()"
+            [formGroup]="loginFormValues"
+          >
+            <div class="form-group col-12">
+              <label>UserName</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted &&
+                    loginFormValues.get('userName')?.errors &&
+                    loginFormValues.get('userName')?.touched
+                }"
+                required
+              />
+            </div>
+            <div class="form-group col-12 mt-2">
+              <label>Password</label>
+              <div class="input-group mb-3">
+                <input
+                  [type]="show ? 'text' : 'password'"
+                  class="form-control"
+                  formControlName="password"
+                  [ngClass]="{
+                    'is-invalid':
+                      submitted &&
+                      loginFormValues.get('password')?.errors &&
+                      loginFormValues.get('password')?.touched
+                  }"
+                  required
+                />
+                <button
+                  type="button"
+                  class="input-group-text"
+                  id="basic-addon1"
+                  (click)="showPassword()"
+                >
+                  <fa-icon [icon]="show ? faEye : faEyeSlash"></fa-icon>
+                </button>
+              </div>
+            </div>
+            <div class="form-group col-12 mt-3 row">
+              <div class="col-sm-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-sm fw-bold"
+                  [disabled]="!loginForm.valid"
+                
+                >
+
+                  Login <fa-icon [icon]="faSignIn"></fa-icon>
+                </button>
+              </div>
+              <div class="col-sm-6 text-md-end" style="cursor: pointer;">
+                <button type="button" class="btn btn-primary btn-sm fw-bold" (click)="openModel()">
+                  Forgot Password <fa-icon [icon]="faUserLock"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div
+    class="modal fade"
+    id="forgetPasswordModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="forgetPasswordForm">
+            Forgot your password?
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            #forgetPasswordForm="ngForm"
+            (ngSubmit)="onLogin()"
+            [formGroup]="forgetPasswordFormValues"
+          >
+            <div class="mb-3">
+              <label for="user_name" class="col-form-label">UserName</label>
+              <input
+                type="text"
+                formControlName="user_name"
+                class="form-control"
+                id="user_name"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted &&
+                    forgetPasswordFormValues.get('user_name')?.errors &&
+                    forgetPasswordFormValues.get('user_name')?.touched
+                }"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email_id" class="col-form-label">Email ID</label>
+              <input
+                type="email"
+                formControlName="email_id"
+                class="form-control"
+                id="email_id"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted &&
+                    forgetPasswordFormValues.get('email_id')?.errors &&
+                    forgetPasswordFormValues.get('email_id')?.touched
+                }"
+                required
+          
+                title="Please provide valid email address"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            [disabled]="!forgetPasswordForm.valid"
+            (click)="validateUser()"
+          >
+            VALIDATE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

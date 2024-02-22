@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2><i class="fas fa-truck"></i> Create Shipment</h2>
+        <form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="shippingAddress"><i class="fas fa-map-marker-alt"></i> Shipping Address</label>
+            <input type="text" class="form-control" id="shippingAddress" formControlName="shippingAddress">
+          </div>
+          <div class="form-group">
+            <label for="shippingMethod"><i class="fas fa-shipping-fast"></i> Shipping Method</label>
+            <input type="text" class="form-control" id="shippingMethod" formControlName="shippingMethod">
+          </div>
+          <button type="submit" class="btn btn-primary mt-3" ><i class="fas fa-save"></i> Save Shipment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,41 @@
+
+
+
+
+<div class="container mt-3">
+    <div>
+        <h2 class="card-header text-center ">Seller Page</h2>
+    </div>
+    
+  
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Product Details</h1>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Product ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Starting Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{ product.productId }}</td>
+                  <td>{{ product.productName }}</td>
+                  <td>{{ product.description }}</td>
+                  <td>{{ product.startingPrice }}</td>
+                    <td>
+                    <button class="btn btn-primary me-2" (click)="createOrEditProduct(product.productId)">Edit</button>
+                     <button  class="btn btn-success" (click)="createOrEditAuction(product.productId)">Create/Edit Auction</button>
+                  </td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      

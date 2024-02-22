@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>Edit Buyer</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" class="form-control" formControlName="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" formControlName="email" required />
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" class="form-control" formControlName="password" required />
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

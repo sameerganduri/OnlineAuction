@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand px-2">
+  <div class="side-nav-button p-2 me-3 text-light" >
+    <fa-icon [icon]="faBars" [styles]="{ color: 'white' }"></fa-icon>
+  </div>
+  <a class="navbar-brand px-2" routerLink="/{{ role }}">
+    Online Auction
+  </a>
+  <div class="navbar-collapse"></div>
+
+  <div class="profile-logo dropstart">
+    <button
+      type="button"
+      class="btn btn-outline-light dropdown-toggle"
+      data-bs-toggle="dropdown"
+    
+    (click)="logOut()"
+      >
+      LogOut
+    </button>
+
+
+
+
+    
+  </div>
+</nav>
